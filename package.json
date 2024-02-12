@@ -1,0 +1,21 @@
+{
+  "name": "discord-tools",
+  "version": "1.0.0",
+  "description": "Discordのメッセージなどのツール",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kuwacom/discord-tools"
+  },
+  "keywords": [
+    "discord"
+  ],
+  "author": "kuwa",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.2"
+  }
+}
