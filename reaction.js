@@ -3,8 +3,6 @@ require('dotenv').config();
 const emojiList = require(process.env.EMOJI_LIST_FILE);
 
 const addEmoji = async (emojiId) => {
-    console.log(`https://discord.com/api/v9/channels/${process.env.TARGET_CHANNEL_ID}/messages/${process.env.REACTION_TARGET_MESSAGE_ID}/reactions/emoji%3A${emojiId}/%40me` +
-        (process.env.ENABLE_SUPER_REACTION == 'true' ? '?type=1' : ''))
     return fetch(
         `https://discord.com/api/v9/channels/${process.env.TARGET_CHANNEL_ID}/messages/${process.env.REACTION_TARGET_MESSAGE_ID}/reactions/emoji%3A${emojiId}/%40me` +
         (process.env.ENABLE_SUPER_REACTION == 'true' ? '?type=1' : '')
