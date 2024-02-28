@@ -5,8 +5,6 @@ const reply = {
     targetMessageId: process.env.REPLY_TARGET_MESSAGE_ID, // リプライ先メッセージID
 };
 
-const messageCount = 2; // メッセージ送信回数
-
 const sendMessages = async (message) => {
     return fetch(`https://discord.com/api/v9/channels/${process.env.TARGET_CHANNEL_ID}/messages`, {
         method: 'POST',
@@ -26,7 +24,7 @@ const sendMessages = async (message) => {
 
 (async () => {
     try {
-        const ress = await Promise.all([...Array(messageCount)].map(() => {
+        const ress = await Promise.all([...Array(Number(process.env.MESSAGE_COUNT))].map(() => {
             return sendMessages(process.env.MESSAGE_CONTENTS);
         }));
         console.log(`Done send ${ress.length} Messages!`);
